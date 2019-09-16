@@ -1,0 +1,28 @@
+
+<div ng-app="app" class="container pad-top">
+
+    <form novalidate>
+        First Name:<br>
+        <input type="text" ng-model="user.firstName"><br>
+        Last Name:<br>
+        <input type="text" ng-model="user.lastName">
+        <br><br>
+        <button ng-click="reset()">RESET</button>
+    </form>
+    <p>form = {{user}}</p>
+    <p>master = {{master}}</p>
+
+    <table class="table calcTable">
+
+        <tr>
+            <th>User</th>
+            <th>Master</th>
+        </tr>
+        <tr>
+            <td>{{ user }} </td>
+            <td>{{ master }}</td>
+        </tr>
+
+    </table>
+
+</div>

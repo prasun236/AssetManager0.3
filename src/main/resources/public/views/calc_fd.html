@@ -1,0 +1,83 @@
+<div ng-app="app" class="container pad-top clearfix">
+
+    <a href="http://192.168.100.7:9090/index.html#/fd" class="link">Fixed Deposit</a>
+    <a href="http://192.168.100.7:9090/index.html#/rd" class="link">Recurring Deposit</a>
+    <a href="http://192.168.100.7:9090/index.html#/portfolio" class="link">HomeLoan Vs Rent</a>
+
+    <br><br>
+
+    <p class="header">Fixed Deposit Calculator</p>
+
+    <div class="box">
+        <label class="info_type">Fixed Deposit amount</label>
+        <input type="number" placeholder="₹ Enter Amount" ng-model="a"><br>
+        <div>
+            <label class="info_type">Rate Of Interest</label><br>
+            <input type="number" ng-model="b">
+            <span class="help_text">%</span>
+            <br>
+        </div>
+
+
+        <label class="info_type">Number of Years</label><br>
+        <input type="number" ng-model="c"><br>
+        <label class="info_type">Compounding</label><br>
+
+        <select class="txt-col" ng-model="d">
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="2">Half Yearly</option>
+            <option value="1">Yearly</option>
+       </select>
+
+        <br><br>
+        <!--<button class="btn btn-primary" ng-click="result()">CALC</button>-->
+
+        <div>
+
+
+            <table class="table calcTable">
+
+                <tr>
+                    <th>Invested Amount</th>
+                    <th>Interest Amount</th>
+                    <th>Maturity Amount</th>
+                </tr>
+                <tr>
+                    <td>{{ a }}</td>
+                    <td>{{ result() - a}}</td>
+                    <td> {{ result() }}</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+    <div class="l-sidebar at_right us_widget_area_bank_fixed_deposit_sidebar box1 form_box">
+        <div class="widget widget_recent_entries">
+            <h3 class="widgettitle">Related Articles</h3>
+            <ul>
+                <li>
+                    <a href="http://localhost:9090/index.html#/portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a href="https://www.paisabazaar.com/fixed-deposit/best-fixed-deposit-interest-rates-in-2019-for-indian-citizens/">Best Fixed Deposit Interest Rates in 2019</a>
+                </li>
+                <li>
+                    <a href="https://www.paisabazaar.com/fixed-deposit/nre-fd-rates/">Best NRE FD Rates 2019 : All You Need To Know</a>
+                </li>
+                <li>
+                    <a href="https://www.paisabazaar.com/fixed-deposit/fixed-deposit-rules-and-regulations/">5 Fixed Deposit Rules and Regulations You Must Know</a>
+                </li>
+                <li>
+                    <a href="https://www.paisabazaar.com/fixed-deposit/government-increases-interest-rates-on-post-office-small-savings-schemes-still-cant-beat-these-banks/">Government increases interest rates!</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

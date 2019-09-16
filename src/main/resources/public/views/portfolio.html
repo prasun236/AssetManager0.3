@@ -1,0 +1,140 @@
+<div ng-app="app"  class="container pad-top">
+
+
+    <h2>Portfolio Snapshot</h2>
+
+    <table class="table calcTable">
+
+        <tr>
+            <th>Invested Value</th>
+            <th>Current Value</th>
+            <th>Earnings</th>
+            <th>Absolute Returns <a class="tool-tip" tooltip="Profit/Loss on your total portfolio over the invested amount." tooltip-placement="auto">i</a></th>
+            <th>XIRR<a class="tool-tip" tooltip="Annual return into your portfolio taking into account transactions in different point of time." tooltip-placement="auto">i</a></th>
+            <th>CAGR<a class="tool-tip" tooltip="CAGR is the rate of return that would be required for an investment to grow from its beginning balance to its ending balance, assuming the profits were reinvested at the end of each year of the investment's lifespan." tooltip-placement="auto">i</a></th>
+        </tr>
+        <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+        </tr>
+    </table>
+
+    <h2>Holdings</h2>
+
+<p>Total Earnings  <a class="tool-tip" tooltip="Profit/Loss on your total portfolio over the invested amount." tooltip-placement="auto">i</a></p>
+
+
+
+    <div>
+
+        <table class="table calcTable">
+            <tr>
+                <th>Fund</th>
+                <th>Number of Units</th>
+                <th>Average NAV</th>
+                <th>Current NAV</th>
+                <th>Date</th>
+                <th>Invested Amount</th>
+                <th>Current Amount</th>
+                <th>Returns</th>
+            </tr>
+            <tr>
+                <td>ICICI Financial & Banking Services</td>
+                <td>694.37</td>
+                <td>72.01</td>
+                <td>{{ shipwrecks.data[0].nav }}</td>
+                <td>{{ shipwrecks.data[0].date }}</td>
+                <td>50000</td>
+                <td>{{ 694.37 * shipwrecks.data[0].nav }}</td>
+                <td>{{ (694.37 * shipwrecks.data[0].nav) - 50000 }}</td>
+            </tr>
+            <tr>
+                <td>ICICI Financial & Banking Services</td>
+                <td>694.37</td>
+                <td>72.01</td>
+                <td>{{ shipwrecks.data[1].nav }}</td>
+                <td>{{ shipwrecks.data[1].date }}</td>
+                <td>50000</td>
+                <td>{{ 694.37 * shipwrecks.data[1].nav }}</td>
+                <td>{{ (694.37 * shipwrecks.data[1].nav) - 50000 }}</td>
+            </tr>
+            <tr>
+                <td>ICICI Financial & Banking Services</td>
+                <td>694.37</td>
+                <td>72.01</td>
+                <td>{{ shipwrecks.data[2].nav }}</td>
+                <td>{{ shipwrecks.data[2].date }}</td>
+                <td>50000</td>
+                <td>{{ 694.37 * shipwrecks.data[2].nav }}</td>
+                <td>{{ (694.37 * shipwrecks.data[2].nav) - 50000 }}</td>
+            </tr>
+            <tr>
+                <td>ICICI Financial & Banking Services</td>
+                <td>694.37</td>
+                <td>72.01</td>
+                <td>{{ shipwrecks.data[3].nav }}</td>
+                <td>{{ shipwrecks.data[3].date }}</td>
+                <td>50000</td>
+                <td>{{ 694.37 * shipwrecks.data[3].nav }}</td>
+                <td>{{ (694.37 * shipwrecks.data[3].nav) - 50000 }}</td>
+            </tr>
+
+        </table>
+
+
+    <table class="table calcTable">
+        <tr>
+            <th>Index</th>
+            <th>Date</th>
+            <th>NAV</th>
+        </tr>
+
+        <tr ng-repeat="x in shipwrecks">
+            <td>{{$index}}</td>
+            <td>{{ shipwrecks.data[$index].date }}</td>
+            <td>{{ shipwrecks.data[$index].nav }}</td>
+        </tr>
+    </table>
+
+    </div>
+
+    <div>
+        <p>The ID is {{shipwrecks.meta.fund_house}}</p>
+        <p>The content is {{shipwrecks.meta.scheme_category}}</p>
+        <p>The content is {{shipwrecks.data[9]}}</p>
+    </div>
+
+    <h2>Sample Holdings - In Progess</h2>
+    <div>
+
+
+
+        <h2>$http Service Tutorial</h2>
+
+        <button ng-click="getRequest()">Test Rest</button>
+        <table class="table calcTable">
+
+            <tr>
+                <th>Fund House</th>
+                <th>Scheme Category</th>
+                <th>Scheme Name</th>
+                <th>Scheme Type</th>
+                <th>Random</th>
+            </tr>
+            <tr>
+                <!--<td>{{shipwrecks.description}} </td>-->
+                <td>{{shipwrecks.meta.fund_house}} </td>
+                <td>{{shipwrecks.meta.scheme_category}} </td>
+                <td>{{shipwrecks.meta.scheme_name}} </td>
+                <td>{{shipwrecks.meta.scheme_type}} </td>
+                <td>test </td>
+            </tr>
+
+        </table>
+    </div>
+
+</div>
